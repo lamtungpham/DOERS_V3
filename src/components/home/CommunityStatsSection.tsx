@@ -1,23 +1,46 @@
 import { Users, Briefcase, Star } from "lucide-react";
-import { useEffect, useRef } from "react";
-import { animate, useInView } from "motion/react";
+import { useEffect, useRef, useState } from "react";
 
 function Counter({ value }: { value: number }) {
   const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const [isInView, setIsInView] = useState(false);
 
   useEffect(() => {
-    if (isInView && ref.current) {
-      const controls = animate(0, value, {
-        duration: 2,
-        ease: "easeOut",
-        onUpdate: (latest) => {
-          if (ref.current) {
-            ref.current.textContent = Math.round(latest).toString();
-          }
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          if (ref.current) observer.unobserve(ref.current);
         }
-      });
-      return () => controls.stop();
+      },
+      { rootMargin: "-50px" }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (isInView) {
+      let startTime: number | null = null;
+      let frameId: number;
+      const duration = 2000;
+      
+      const animateCount = (time: number) => {
+        if (!startTime) startTime = time;
+        const progress = Math.min((time - startTime) / duration, 1);
+        const easeOutExpo = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+        
+        if (ref.current) {
+          ref.current.textContent = Math.round(easeOutExpo * value).toString();
+        }
+        
+        if (progress < 1) {
+          frameId = requestAnimationFrame(animateCount);
+        }
+      };
+      
+      frameId = requestAnimationFrame(animateCount);
+      return () => cancelAnimationFrame(frameId);
     }
   }, [isInView, value]);
 

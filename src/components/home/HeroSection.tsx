@@ -68,14 +68,20 @@ export default function HeroSection() {
           </div>
 
           {/* Main Image */}
-          <img 
-             src="https://i.ibb.co/SDXhY1NR/anh-trans.webp" 
-             alt="Doers Team working" 
-             width="800"
-             height="800"
-             fetchPriority="high"
-             className="w-[120%] h-[120%] object-contain z-10 drop-shadow-2xl -translate-y-4 translate-x-4"
-          />
+          <picture>
+            {/* Ảnh Mobile (width <= 768px): Hãy thay bằng link ảnh đã nén nhỏ khoảng 400px - 600px */}
+            <source media="(max-width: 768px)" srcSet="https://i.ibb.co/SDXhY1NR/anh-trans.webp" />
+            {/* Ảnh Desktop (width >= 769px): Ảnh kích thước chuẩn 800px - 1200px */}
+            <source media="(min-width: 769px)" srcSet="https://i.ibb.co/SDXhY1NR/anh-trans.webp" />
+            <img 
+               src="https://i.ibb.co/SDXhY1NR/anh-trans.webp" 
+               alt="Doers Team working" 
+               width="800"
+               height="800"
+               fetchPriority="high"
+               className="w-[120%] h-[120%] object-contain z-10 drop-shadow-2xl -translate-y-4 translate-x-4"
+            />
+          </picture>
 
           {/* Floating Badges */}
           <div className="absolute top-[8%] left-[8%] bg-brand-dark text-brand-lime px-4 py-2 font-black text-sm uppercase tracking-wide transform -rotate-[6deg] shadow-lg z-20 flex flex-col items-center [border-radius:12px_8px_16px_8px/8px_16px_8px_12px] font-sans">

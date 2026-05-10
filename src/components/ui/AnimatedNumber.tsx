@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import { useInView } from "motion/react";
 
 interface AnimatedNumberProps {
   value: number;
@@ -9,7 +8,21 @@ interface AnimatedNumberProps {
 
 export function AnimatedNumber({ value, suffix = "", padZero = false }: AnimatedNumberProps) {
   const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-50px" });
+  const [inView, setInView] = useState(false);
+  
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          if (ref.current) observer.unobserve(ref.current);
+        }
+      },
+      { rootMargin: "-50px" }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
   
   const valueStr = value.toString();
   const paddingLength = padZero ? Math.max(2, valueStr.length) : 0;
