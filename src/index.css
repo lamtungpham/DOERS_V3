@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Caveat:wght@400..700&family=Pattaya&display=swap');
+@import "tailwindcss";
+
+@layer base {
+  body {
+    overflow-x: hidden;
+  }
+}
+
+@theme {
+
+  --color-brand-orange: #FF5A00;
+  --color-brand-purple: #4620CD;
+  --color-brand-purple-light: #6E41E2;
+  --color-brand-lime: #D4FF00;
+  --color-brand-dark: #090B0F;
+  
+  --font-sans: "Be Vietnam Pro", sans-serif;
+  --font-hand: "Caveat", cursive;
+  --font-pattaya: "Pattaya", sans-serif;
+  
+  --text-7xl: 4.5rem;
+  --text-7xl--line-height: 1;
+  --text-8xl: 6rem;
+  --text-8xl--line-height: 1;
+  --text-9xl: 8rem;
+  --text-9xl--line-height: 1;
+
+  --color-surface: #fbf8ff;
+  --color-surface-dim: #dad9e3;
+  --color-surface-bright: #fbf8ff;
+  --color-on-surface: #1a1b22;
+  --color-on-surface-variant: #5b4138;
+  --color-inverse-surface: #2f3038;
+  --color-outline-variant: #e3bfb2;
+  --color-primary-container: #ff5f15;
+  --color-on-primary-container: #551800;
+  --color-inverse-primary: #ffb59b;
+  --color-outline: #8f7066;
+}
+
+@layer utilities {
+  .text-outline {
+    -webkit-text-stroke: 1px black;
+    color: transparent;
+  }
+  .blob-bg {
+    clip-path: polygon(1% 12%, 98% 3%, 99% 90%, 3% 97%);
+  }
+  .handdrawn-border {
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  }
+  .handdrawn-border-2 {
+    border-radius: 15px 225px 15px 255px/255px 15px 225px 15px;
+  }
+  .blob-shape {
+    border-radius: 41% 59% 34% 66% / 46% 54% 46% 54%;
+  }
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    @apply bg-white text-neutral-900;
+  }
+
+  /* Ensure hand cursor on all clickable elements */
+  a, button, [role="button"], input[type="button"], input[type="submit"], select, label {
+    cursor: pointer;
+  }
+}
