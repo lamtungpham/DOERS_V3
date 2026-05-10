@@ -100,7 +100,7 @@ export default function ProjectsSection() {
 
                <div className="w-full md:w-[45%] shrink-0">
                  <img 
-                   src="https://i.ibb.co/Rp3r6dCG/585590060-122184827414562518-6719802881193470851-n.jpg?q=80&w=600&auto=format&fit=crop" 
+                   src="https://i.ibb.co/5Xtqbg8f/chulong.webp?q=80&w=600&auto=format&fit=crop" 
                    alt="Project LiftOn" width="600" height="400"
                    loading="lazy"
                    className="w-full h-[240px] md:h-full object-cover rounded-[20px] border border-neutral-800"
