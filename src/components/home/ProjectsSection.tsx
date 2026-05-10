@@ -102,6 +102,7 @@ export default function ProjectsSection() {
                  <img 
                    src="https://i.ibb.co/Rp3r6dCG/585590060-122184827414562518-6719802881193470851-n.jpg?q=80&w=600&auto=format&fit=crop" 
                    alt="Project LiftOn" 
+                   loading="lazy"
                    className="w-full h-[240px] md:h-full object-cover rounded-[20px] border border-neutral-800"
                  />
                </div>
@@ -119,6 +120,7 @@ export default function ProjectsSection() {
                    <img 
                      src="https://cdn.kiotvietweb.vn/merchant/24d54239dc4d8d8753f614117c1bb73e/other/1750664528/logo_VANG.png" 
                      alt="Vinh Lộc Logo" 
+                     loading="lazy"
                      className="w-24 object-contain shrink-0 transform -rotate-6 mt-2 hidden sm:block drop-shadow-sm opacity-90"
                    />
                  </div>

@@ -104,7 +104,7 @@ export default function JournalEntries() {
             {/* Polaroid Image */}
             <div className="bg-neutral-100 mb-4 h-48 w-full border border-neutral-200 p-2 handdrawn-border-2">
               {post.image ? (
-                <img src={post.image} alt={post.title} className="w-full h-full object-cover transition-all duration-500 rounded-sm" />
+                <img src={post.image} alt={post.title} loading="lazy" className="w-full h-full object-cover transition-all duration-500 rounded-sm" />
               ) : (
                 <div className="w-full h-full flex items-center justify-center text-neutral-400 font-hand text-2xl">
                   No Photo

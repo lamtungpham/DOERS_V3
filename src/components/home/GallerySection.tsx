@@ -26,6 +26,7 @@ export default function GallerySection() {
           <img 
             src="https://i.ibb.co/933W9L2v/474897015-122141191604553991-907753041860819748-n.jpg?q=80&w=800&auto=format&fit=crop" 
             alt="Doers Team Activity" 
+            loading="lazy"
             className="w-full h-full min-h-[300px] object-cover hover:scale-105 transition-transform duration-500"
           />
         </div>
@@ -36,6 +37,7 @@ export default function GallerySection() {
             <img 
               src="https://i.ibb.co/rKL2P3JT/501530007-122172567290553991-3271262728546306513-n.jpg?q=80&w=400&auto=format&fit=crop" 
               alt="Activity 1" 
+              loading="lazy"
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
             />
           </div>
@@ -43,6 +45,7 @@ export default function GallerySection() {
             <img 
               src="https://i.ibb.co/LhBqcR5z/598696524-17869402215492032-196568958758583279-n.jpg?q=80&w=400&auto=format&fit=crop" 
               alt="Activity 2" 
+              loading="lazy"
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
             />
           </div>
@@ -50,6 +53,7 @@ export default function GallerySection() {
             <img 
               src="https://i.ibb.co/MkbpcsWj/600085099-17870006436492032-5267118880819849735-n.jpg?q=80&w=400&auto=format&fit=crop" 
               alt="Activity 3" 
+              loading="lazy"
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
             />
           </div>
@@ -57,6 +61,7 @@ export default function GallerySection() {
             <img 
               src="https://i.ibb.co/YB8RG4dW/ho-bang-3-17733781879491976405575-84-0-1364-2048-crop-1773379845170814885467.webp?q=80&w=400&auto=format&fit=crop" 
               alt="Activity 4" 
+              loading="lazy"
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
             />
           </div>
