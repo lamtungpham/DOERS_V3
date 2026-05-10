@@ -73,7 +73,7 @@ export default function HeroSection() {
              alt="Doers Team working" 
              width="800"
              height="800"
-             fetchpriority="high"
+             fetchPriority="high"
              className="w-[120%] h-[120%] object-contain z-10 drop-shadow-2xl -translate-y-4 translate-x-4"
           />
 
