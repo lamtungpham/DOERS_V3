@@ -70,7 +70,7 @@ export default function HeroSection() {
           {/* Main Image */}
           <picture>
             {/* Ảnh Mobile (width <= 768px): Hãy thay bằng link ảnh đã nén nhỏ khoảng 400px - 600px */}
-            <source media="(max-width: 768px)" srcSet="https://i.ibb.co/SDXhY1NR/anh-trans.webp" />
+            <source media="(max-width: 768px)" srcSet="https://i.ibb.co/Z6pN7Bv4/anh-trans-mobile.webp" />
             {/* Ảnh Desktop (width >= 769px): Ảnh kích thước chuẩn 800px - 1200px */}
             <source media="(min-width: 769px)" srcSet="https://i.ibb.co/SDXhY1NR/anh-trans.webp" />
             <img 
