@@ -30,7 +30,7 @@ export default function SignUp() {
           <div className="flex flex-wrap gap-4 mb-4 relative z-20">
             <button 
               onClick={() => setActiveTab('teen')}
-              className={`px-6 py-3 font-bold uppercase tracking-widest text-sm transition-all transform ${activeTab === 'teen' ? 'bg-brand-orange text-white rotate-[-2deg] shadow-lg border-2 border-transparent' : 'bg-white text-neutral-600 rotate-[1deg] hover:rotate-0 hover:bg-orange-50 border-2 border-dashed border-neutral-300'}`}
+              className={`px-6 py-3 font-bold uppercase tracking-widest text-sm transition-all transform ${activeTab === 'teen' ? 'bg-brand-orange text-[#0A0B10] rotate-[-2deg] shadow-lg border-2 border-transparent' : 'bg-white text-neutral-600 rotate-[1deg] hover:rotate-0 hover:bg-orange-50 border-2 border-dashed border-neutral-300'}`}
               style={activeTab === 'teen' ? { borderRadius: "4px 8px 3px 6px" } : { borderRadius: "6px 3px 8px 4px" }}
             >
               DOERS (Teen)

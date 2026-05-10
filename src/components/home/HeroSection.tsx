@@ -38,7 +38,7 @@ export default function HeroSection() {
           </p>
 
           <div className="flex items-center gap-4 relative">
-            <Link to="/signup" className="bg-brand-orange text-white px-8 py-3.5 rounded-xl font-bold text-lg hover:bg-orange-600 transition shadow-md relative z-10 whitespace-nowrap">
+            <Link to="/signup" aria-label="Đăng ký tham gia DOERS" className="bg-brand-orange text-[#0A0B10] px-8 py-3.5 rounded-xl font-bold text-lg hover:bg-orange-600 transition shadow-md relative z-10 whitespace-nowrap">
               THAM GIA NGAY
             </Link>
             {/* Simple loop doodle arrow */}
@@ -69,8 +69,11 @@ export default function HeroSection() {
 
           {/* Main Image */}
           <img 
-             src="https://i.ibb.co/Fqs7pWCN/anh-trans.png" 
+             src="https://i.ibb.co/SDXhY1NR/anh-trans.webp" 
              alt="Doers Team working" 
+             width="800"
+             height="800"
+             fetchpriority="high"
              className="w-[120%] h-[120%] object-contain z-10 drop-shadow-2xl -translate-y-4 translate-x-4"
           />
 

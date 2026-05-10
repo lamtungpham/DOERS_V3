@@ -101,7 +101,7 @@ export default function ProjectsSection() {
                <div className="w-full md:w-[45%] shrink-0">
                  <img 
                    src="https://i.ibb.co/Rp3r6dCG/585590060-122184827414562518-6719802881193470851-n.jpg?q=80&w=600&auto=format&fit=crop" 
-                   alt="Project LiftOn" 
+                   alt="Project LiftOn" width="600" height="400"
                    loading="lazy"
                    className="w-full h-[240px] md:h-full object-cover rounded-[20px] border border-neutral-800"
                  />
@@ -119,7 +119,7 @@ export default function ProjectsSection() {
                    </h3>
                    <img 
                      src="https://cdn.kiotvietweb.vn/merchant/24d54239dc4d8d8753f614117c1bb73e/other/1750664528/logo_VANG.png" 
-                     alt="Vinh Lộc Logo" 
+                     alt="Vinh Lộc Logo" width="96" height="96"
                      loading="lazy"
                      className="w-24 object-contain shrink-0 transform -rotate-6 mt-2 hidden sm:block drop-shadow-sm opacity-90"
                    />
@@ -129,7 +129,7 @@ export default function ProjectsSection() {
                    Chúng mình cùng Vĩnh Lộc Ước Lễ lan tỏa những giá trị ẩm thực truyền thống qua góc nhìn Gen Z sáng tạo.
                  </p>
 
-                 <Link to="/project/lifton" className="text-brand-purple-light hover:text-brand-lime font-bold flex items-center gap-2 transition-colors text-sm font-sans mt-auto">
+                 <Link to="/project/lifton" aria-label="Xem chi tiết dự án LiftOn" className="text-brand-purple-light hover:text-brand-lime font-bold flex items-center gap-2 transition-colors text-sm font-sans mt-auto">
                    Xem chi tiết dự án 
                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transform group-hover:translate-x-1 transition-transform">
                      <path d="M5 12h14M12 5l7 7-7 7"/>

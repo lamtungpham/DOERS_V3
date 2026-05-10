@@ -64,7 +64,7 @@ export default function Footer() {
             
             {/* Left Column */}
             <div className="flex flex-col items-center md:items-start text-center md:text-left">
-              <Link to="/" className="text-3xl font-black tracking-widest text-white mb-4 hover:text-brand-orange transition-colors">
+              <Link to="/" aria-label="Trang chủ DOERS" className="text-3xl font-black tracking-widest text-white mb-4 hover:text-brand-orange transition-colors">
                 DOERS
               </Link>
               <p className="text-neutral-300 font-medium leading-relaxed max-w-sm text-sm">
@@ -74,16 +74,16 @@ export default function Footer() {
 
             {/* Right Column - Socials */}
             <div className="flex gap-4">
-              <a href="mailto:phanhphieuluuky@gmail.com" className="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-brand-orange text-brand-dark transition-colors">
+              <a href="mailto:phanhphieuluuky@gmail.com" aria-label="Gửi email" className="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-brand-orange text-brand-dark transition-colors">
                 <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
               </a>
-              <a href="https://www.facebook.com/phanhphieuluuky.518" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-brand-orange text-brand-dark transition-colors">
+              <a href="https://www.facebook.com/phanhphieuluuky.518" aria-label="Facebook" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-brand-orange text-brand-dark transition-colors">
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="https://www.tiktok.com/@phanhphieuluuky" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-brand-orange text-brand-dark transition-colors">
+              <a href="https://www.tiktok.com/@phanhphieuluuky" aria-label="Tiktok" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-brand-orange text-brand-dark transition-colors">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
               </a>
-              <a href="https://www.youtube.com/@phanhphieuluuky.official" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-brand-orange text-brand-dark transition-colors">
+              <a href="https://www.youtube.com/@phanhphieuluuky.official" aria-label="Youtube" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-brand-orange text-brand-dark transition-colors">
                 <Youtube className="w-5 h-5" />
               </a>
             </div>
