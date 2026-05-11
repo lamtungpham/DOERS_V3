@@ -10,20 +10,20 @@ export default function IntroSection() {
     },
     {
       icon: <Megaphone className="w-12 h-12 text-brand-orange" />,
-      title: "XÂY KÊNH\nTRUYỀN THÔNG",
-      desc: "Sáng tạo nội dung, quay dựng,\nvận hành kênh chuyên nghiệp.",
+      title: "TƯ DUY\nKINH DOANH",
+      desc: "Lên ý tưởng kinh doanh,\nxây kênh truyền thông, bán hàng.",
       color: "border-brand-orange"
     },
     {
       icon: <BarChart2 className="w-12 h-12 text-blue-500" />,
-      title: "QUẢNG BÁ\nSẢN PHẨM",
-      desc: "Đưa sản phẩm của doanh nghiệp\ntiếp cận đông khách hàng.",
+      title: "RÈN LUYỆN\nÝ CHÍ",
+      desc: "Dũng cảm, kỷ luật, \nchủ động, kiên định.",
       color: "border-blue-500"
     },
     {
       icon: <Rocket className="w-12 h-12 text-emerald-500" />,
-      title: "PHÁT TRIỂN\nKỸ NĂNG",
-      desc: "Kỹ năng mềm, teamwork,\nleadership, tư duy sáng tạo.",
+      title: "PHÁT TRIỂN\nKỸ NĂNG MỀM",
+      desc: "Kỹ năng giao tiếp, teamwork,\nleadership, ứng dụng AI.",
       color: "border-emerald-500"
     }
   ];
