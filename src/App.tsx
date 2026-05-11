@@ -28,28 +28,6 @@ function MainLayout({ children }: { children: React.ReactNode }) {
   );
 }
 
-function JournalLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <>
-      <Navbar />
-      <Suspense fallback={<LoadingScreen />}>
-        {children}
-      </Suspense>
-    </>
-  );
-}
-
-function SignUpLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <>
-      <Navbar />
-      <Suspense fallback={<LoadingScreen />}>
-        {children}
-      </Suspense>
-    </>
-  );
-}
-
 function AdminLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="bg-gray-50 min-h-screen">
@@ -66,9 +44,9 @@ export default function App() {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<MainLayout><Home /></MainLayout>} />
-        <Route path="/journal" element={<JournalLayout><Journal /></JournalLayout>} />
-        <Route path="/journal/:id" element={<JournalLayout><PostDetailPage /></JournalLayout>} />
-        <Route path="/signup" element={<SignUpLayout><SignUp /></SignUpLayout>} />
+        <Route path="/journal" element={<MainLayout><Journal /></MainLayout>} />
+        <Route path="/journal/:id" element={<MainLayout><PostDetailPage /></MainLayout>} />
+        <Route path="/signup" element={<MainLayout><SignUp /></MainLayout>} />
         <Route path="/admin" element={<AdminLayout><AdminDashboard /></AdminLayout>} />
         <Route path="/admin/post/new" element={<AdminLayout><AdminPostPage /></AdminLayout>} />
         <Route path="/admin/post/:id" element={<AdminLayout><AdminPostPage /></AdminLayout>} />
