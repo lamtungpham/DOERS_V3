@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { MapPin } from "lucide-react";
 
 const steps = [
   {
@@ -9,6 +10,7 @@ const steps = [
     colorBg: "bg-brand-orange",
     colorBorder: "border-brand-orange",
     colorBorderHover: "lg:group-hover:border-brand-orange",
+    colorText: "text-brand-orange",
   },
   {
     id: 2,
@@ -17,6 +19,7 @@ const steps = [
     colorBg: "bg-brand-purple",
     colorBorder: "border-brand-purple",
     colorBorderHover: "lg:group-hover:border-brand-purple",
+    colorText: "text-brand-purple",
   },
   {
     id: 3,
@@ -25,6 +28,7 @@ const steps = [
     colorBg: "bg-[#3B82F6]",
     colorBorder: "border-[#3B82F6]",
     colorBorderHover: "lg:group-hover:border-[#3B82F6]",
+    colorText: "text-[#3B82F6]",
   },
   {
     id: 4,
@@ -33,6 +37,7 @@ const steps = [
     colorBg: "bg-[#10B981]",
     colorBorder: "border-[#10B981]",
     colorBorderHover: "lg:group-hover:border-[#10B981]",
+    colorText: "text-[#10B981]",
   }
 ];
 
@@ -78,8 +83,11 @@ export default function ProjectsSection() {
                        {step.id}
                      </div>
                      <div className={`border-[1.5px] ${isActive ? step.colorBorder : 'border-transparent'} ${step.colorBorderHover} rounded-[24px] px-6 py-2.5 w-full transition-all duration-300 ${isActive ? 'bg-white' : 'lg:group-hover:bg-white'} font-sans text-sm relative`}>
-                       <div className={`font-bold transition-colors ${isActive ? 'text-brand-dark' : 'text-neutral-500 lg:group-hover:text-brand-dark'}`}>
-                         {step.title}
+                       <div className={`font-bold transition-colors ${isActive ? step.colorText : 'text-neutral-500 lg:group-hover:text-brand-dark'} flex justify-between items-center`}>
+                         <span>{step.title}</span>
+                         {step.id === 1 && (
+                           <MapPin className="w-5 h-5 text-brand-orange animate-bounce" />
+                         )}
                        </div>
                        {/* Expandable Description */}
                        <div className={`grid transition-all duration-300 ${isActive ? 'grid-rows-[1fr]' : 'grid-rows-[0fr] lg:group-hover:grid-rows-[1fr]'}`}>
