@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const steps = [
@@ -7,7 +8,7 @@ const steps = [
     desc: "Onboard, nắm brand, hiểu sản phẩm, chốt mục tiêu",
     colorBg: "bg-brand-orange",
     colorBorder: "border-brand-orange",
-    colorBorderHover: "group-hover:border-brand-orange",
+    colorBorderHover: "lg:group-hover:border-brand-orange",
   },
   {
     id: 2,
@@ -15,7 +16,7 @@ const steps = [
     desc: "Thực tế tại doanh nghiệp, trải nghiệm quy trình, quay chụp, lấy vibe sáng tạo",
     colorBg: "bg-brand-purple",
     colorBorder: "border-brand-purple",
-    colorBorderHover: "group-hover:border-brand-purple",
+    colorBorderHover: "lg:group-hover:border-brand-purple",
   },
   {
     id: 3,
@@ -23,7 +24,7 @@ const steps = [
     desc: "Launch kênh, đăng content test, collect phản hồi nhanh",
     colorBg: "bg-[#3B82F6]",
     colorBorder: "border-[#3B82F6]",
-    colorBorderHover: "group-hover:border-[#3B82F6]",
+    colorBorderHover: "lg:group-hover:border-[#3B82F6]",
   },
   {
     id: 4,
@@ -31,11 +32,13 @@ const steps = [
     desc: "Review số liệu, rút ra insight, cải tiến và tối ưu",
     colorBg: "bg-[#10B981]",
     colorBorder: "border-[#10B981]",
-    colorBorderHover: "group-hover:border-[#10B981]",
+    colorBorderHover: "lg:group-hover:border-[#10B981]",
   }
 ];
 
 export default function ProjectsSection() {
+  const [activeStep, setActiveStep] = useState<number | null>(1);
+
   return (
     <section className="container mx-auto px-4 lg:px-6 py-16 lg:py-24 relative overflow-hidden">
       
@@ -63,26 +66,33 @@ export default function ProjectsSection() {
                {/* Connecting vertical line */}
                <div className="absolute left-[20px] top-8 bottom-8 w-[1px] border-l-2 border-dotted border-neutral-300 -z-10"></div>
                
-               {steps.map((step, index) => (
-                 <div key={step.id} className="flex items-start gap-6 cursor-pointer group relative">
-                   <div className={`w-10 h-10 rounded-full ${step.colorBg} text-white font-bold flex items-center justify-center shrink-0 z-10 opacity-80 group-hover:opacity-100 transition-opacity mt-0.5`}>
-                     {step.id}
-                   </div>
-                   <div className={`border-[1.5px] ${index === 0 ? step.colorBorder : 'border-transparent'} ${step.colorBorderHover} rounded-[24px] px-6 py-2.5 w-full transition-all duration-300 ${index === 0 ? 'bg-white' : 'group-hover:bg-white'} font-sans text-sm relative`}>
-                     <div className={`font-bold transition-colors ${index === 0 ? 'text-brand-dark' : 'text-neutral-500 group-hover:text-brand-dark'}`}>
-                       {step.title}
+               {steps.map((step) => {
+                 const isActive = activeStep === step.id;
+                 return (
+                   <div 
+                     key={step.id} 
+                     className="flex items-start gap-6 cursor-pointer group relative"
+                     onClick={() => setActiveStep(isActive ? null : step.id)}
+                   >
+                     <div className={`w-10 h-10 rounded-full ${step.colorBg} text-white font-bold flex items-center justify-center shrink-0 z-10 transition-opacity mt-0.5 ${isActive ? 'opacity-100' : 'opacity-80 lg:group-hover:opacity-100'}`}>
+                       {step.id}
                      </div>
-                     {/* Expandable Description */}
-                     <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-300">
-                       <div className="overflow-hidden">
-                         <p className="pt-2 text-neutral-600 font-normal text-[13px] leading-relaxed">
-                           {step.desc}
-                         </p>
+                     <div className={`border-[1.5px] ${isActive ? step.colorBorder : 'border-transparent'} ${step.colorBorderHover} rounded-[24px] px-6 py-2.5 w-full transition-all duration-300 ${isActive ? 'bg-white' : 'lg:group-hover:bg-white'} font-sans text-sm relative`}>
+                       <div className={`font-bold transition-colors ${isActive ? 'text-brand-dark' : 'text-neutral-500 lg:group-hover:text-brand-dark'}`}>
+                         {step.title}
+                       </div>
+                       {/* Expandable Description */}
+                       <div className={`grid transition-all duration-300 ${isActive ? 'grid-rows-[1fr]' : 'grid-rows-[0fr] lg:group-hover:grid-rows-[1fr]'}`}>
+                         <div className="overflow-hidden">
+                           <p className="pt-2 text-neutral-600 font-normal text-[13px] leading-relaxed">
+                             {step.desc}
+                           </p>
+                         </div>
                        </div>
                      </div>
                    </div>
-                 </div>
-               ))}
+                 );
+               })}
              </div>
           </div>
 
