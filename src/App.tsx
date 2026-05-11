@@ -1,5 +1,6 @@
 import React, { Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
 import Navbar from "./components/layout/Navbar";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -73,6 +74,7 @@ export default function App() {
         <Route path="/admin/post/new" element={<AdminLayout><AdminPostPage /></AdminLayout>} />
         <Route path="/admin/post/:id" element={<AdminLayout><AdminPostPage /></AdminLayout>} />
       </Routes>
+      <Analytics />
     </BrowserRouter>
   );
 }
