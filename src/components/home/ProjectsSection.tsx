@@ -142,7 +142,7 @@ export default function ProjectsSection() {
                    Chúng mình cùng Vĩnh Lộc Ước Lễ lan tỏa những giá trị ẩm thực truyền thống qua góc nhìn Gen Z sáng tạo.
                  </p>
 
-                 <Link to="/project/lifton" aria-label="Xem chi tiết dự án LiftOn" className="text-brand-purple-light hover:text-brand-lime font-bold flex items-center gap-2 transition-colors text-sm font-sans mt-auto">
+                 <Link to="/journal" aria-label="Xem chi tiết dự án LiftOn" className="text-brand-purple-light hover:text-brand-lime font-bold flex items-center gap-2 transition-colors text-sm font-sans mt-auto">
                    Xem chi tiết dự án 
                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transform group-hover:translate-x-1 transition-transform">
                      <path d="M5 12h14M12 5l7 7-7 7"/>
