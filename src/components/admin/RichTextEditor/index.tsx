@@ -64,7 +64,7 @@ export default function RichTextEditor({ content, onChange }: { content: string,
     onChange(e.target.value);
     if (editor) {
       const { from, to } = editor.state.selection;
-      editor.commands.setContent(e.target.value, false);
+      editor.commands.setContent(e.target.value, { emitUpdate: false });
       // Try to restore selection roughly if possible, but simpler to just set content
     }
   };

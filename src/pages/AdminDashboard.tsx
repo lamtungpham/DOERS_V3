@@ -11,6 +11,7 @@ import { Plus, Edit2, Trash2, LogOut } from 'lucide-react';
 export default function AdminDashboard() {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
+  const [isLoggingIn, setIsLoggingIn] = useState(false);
   const [posts, setPosts] = useState<any[]>([]);
   const [deleteConfirmId, setDeleteConfirmId] = useState<string | null>(null);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
@@ -38,11 +39,22 @@ export default function AdminDashboard() {
   }, [user]);
 
   const handleLogin = async () => {
+    if (isLoggingIn) return;
+    setIsLoggingIn(true);
+    setErrorMsg(null);
     try {
       const provider = new GoogleAuthProvider();
       await signInWithPopup(auth, provider);
-    } catch (error) {
+    } catch (error: any) {
       console.error(error);
+      if (error.code === 'auth/popup-closed-by-user' || error.code === 'auth/cancelled-popup-request') {
+        // Just ignore or show a small message
+        setErrorMsg('Bạn đã hủy đăng nhập hoặc popup bị chặn.');
+      } else {
+        setErrorMsg('Đăng nhập thất bại: ' + (error.message || 'Lỗi không xác định'));
+      }
+    } finally {
+      setIsLoggingIn(false);
     }
   };
 
@@ -75,13 +87,20 @@ export default function AdminDashboard() {
       <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 px-4">
         <div className="max-w-md w-full bg-white p-8 rounded-xl shadow-sm md:border md:border-gray-200">
           <h1 className="text-2xl font-bold text-center mb-6">DOERS Admin CMS</h1>
+          
+          {errorMsg && (
+            <div className="bg-red-50 border border-red-200 text-red-700 p-4 rounded mb-6 text-center text-sm">
+              {errorMsg}
+            </div>
+          )}
+
           {user ? (
             <div className="text-center text-red-500 mb-4">
               Tài khoản {user.email} không có quyền truy cập. 
               <br/>
               <button 
                 onClick={handleLogout}
-                className="mt-4 px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300"
+                className="mt-4 px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300 transition"
               >
                 Đăng xuất để thử lại
               </button>
@@ -89,9 +108,10 @@ export default function AdminDashboard() {
           ) : (
             <button
               onClick={handleLogin}
-              className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-brand-orange hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-orange"
+              disabled={isLoggingIn}
+              className={`w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-brand-orange hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-orange ${isLoggingIn ? 'opacity-70 cursor-not-allowed' : ''}`}
             >
-              Đăng nhập bằng Google
+              {isLoggingIn ? 'Đang đăng nhập...' : 'Đăng nhập bằng Google'}
             </button>
           )}
         </div>
