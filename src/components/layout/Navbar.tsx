@@ -6,8 +6,8 @@ export default function Navbar() {
 
   return (
     <nav className="container mx-auto px-6 py-6 flex justify-between items-center" data-purpose="top-navigation">
-      <Link to="/" aria-label="Trang chủ DOERS" className="text-3xl font-black tracking-widest text-[#0A0B10]">
-        DOERS
+      <Link to="/" aria-label="Trang chủ DOERS" className="inline-block shrink-0">
+        <img src="https://i.ibb.co/rfMCYRgm/logo-webp.webp" alt="DOERS Logo" className="h-24 md:h-32 w-auto object-contain" />
       </Link>
       <div className="hidden md:flex items-center space-x-10 text-base font-bold">
         <Link

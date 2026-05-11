@@ -93,11 +93,6 @@ export default function ProjectsSection() {
                {/* Tape detail on top */}
                <div className="absolute -top-3 left-[30%] -translate-x-1/2 w-20 h-6 bg-yellow-100/90 shadow-sm transform -rotate-2 z-20"></div>
                
-               {/* Decorative arrow top right */}
-               <svg className="absolute top-6 right-6 w-10 h-10 text-brand-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                 <path d="M5 12h14M12 5l7 7-7 7"/>
-               </svg>
-
                <div className="w-full md:w-[45%] shrink-0">
                  <img 
                    src="https://i.ibb.co/5Xtqbg8f/chulong.webp?q=80&w=600&auto=format&fit=crop" 
