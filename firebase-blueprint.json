@@ -1,0 +1,27 @@
+{
+  "entities": {
+    "Post": {
+      "title": "Post",
+      "description": "A blog post or journal entry",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "description": "Title of the post" },
+        "content": { "type": "string", "description": "HTML content of the post" },
+        "thumbnailUrl": { "type": "string", "description": "URL of the thumbnail image" },
+        "cat": { "type": "string", "description": "Category" },
+        "excerpt": { "type": "string", "description": "Short excerpt" },
+        "tapeColor": { "type": "string", "description": "Color of the tape" },
+        "rotation": { "type": "string", "description": "Rotation class" },
+        "createdAt": { "type": "number", "description": "Timestamp" },
+        "updatedAt": { "type": "number", "description": "Timestamp" }
+      },
+      "required": ["title", "content", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/posts/{postId}": {
+      "schema": { "$ref": "#/entities/Post" },
+      "description": "Blog posts"
+    }
+  }
+}

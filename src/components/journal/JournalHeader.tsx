@@ -1,7 +1,20 @@
 import { FileText } from "lucide-react";
 import { AnimatedNumber } from "../ui/AnimatedNumber";
+import { useEffect, useState } from "react";
+import { collection, onSnapshot, query } from "firebase/firestore";
+import { db } from "../../firebase";
 
 export default function JournalHeader() {
+  const [postCount, setPostCount] = useState(0);
+
+  useEffect(() => {
+    const q = query(collection(db, "posts"));
+    const unsubscribe = onSnapshot(q, (snapshot) => {
+      setPostCount(snapshot.size);
+    });
+    return () => unsubscribe();
+  }, []);
+
   return (
     <header className="mb-16 flex flex-col md:flex-row justify-between items-start md:items-end pb-8 relative">
       {/* Decorative Washi Tape */}
@@ -23,7 +36,7 @@ export default function JournalHeader() {
         <FileText className="w-8 h-8 text-brand-orange mr-4" />
         <div>
           <div className="text-4xl font-bold tracking-tighter">
-            <AnimatedNumber value={142} />
+            <AnimatedNumber value={postCount} />
           </div>
           <div className="text-xs font-bold tracking-widest text-neutral-500 uppercase">Bài viết</div>
         </div>

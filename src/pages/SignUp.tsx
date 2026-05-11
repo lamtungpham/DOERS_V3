@@ -98,7 +98,7 @@ export default function SignUp() {
             <div className="bg-white p-8 relative rotate-2 shadow-xl" style={{ border: "2px dashed #e5e5e5" }}>
                 <div className="absolute -top-4 -left-4 w-16 h-8 bg-brand-purple/30 transform -rotate-12 backdrop-blur-sm" style={{ clipPath: "polygon(0 0, 100% 5%, 98% 100%, 2% 95%)" }}></div>
                 <span className="text-8xl font-black text-brand-orange block mb-4 tracking-tighter" style={{ fontFamily: "var(--font-pattaya)" }}>
-                   <AnimatedNumber value={10} suffix="k+" />
+                   <AnimatedNumber value={300} suffix="+" />
                 </span>
                 <h2 className="text-3xl font-bold text-brand-dark mb-4 leading-tight">
                     Các DOERS hành động mỗi ngày.
