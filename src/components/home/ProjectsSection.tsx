@@ -9,7 +9,6 @@ const steps = [
     desc: "Onboard, nắm brand, hiểu sản phẩm, chốt mục tiêu",
     colorBg: "bg-brand-orange",
     colorBorder: "border-brand-orange",
-    colorBorderHover: "lg:group-hover:border-brand-orange",
     colorText: "text-brand-orange",
   },
   {
@@ -18,7 +17,6 @@ const steps = [
     desc: "Thực tế tại doanh nghiệp, trải nghiệm quy trình, quay chụp, lấy vibe sáng tạo",
     colorBg: "bg-brand-purple",
     colorBorder: "border-brand-purple",
-    colorBorderHover: "lg:group-hover:border-brand-purple",
     colorText: "text-brand-purple",
   },
   {
@@ -27,7 +25,6 @@ const steps = [
     desc: "Launch kênh, đăng content test, collect phản hồi nhanh",
     colorBg: "bg-[#3B82F6]",
     colorBorder: "border-[#3B82F6]",
-    colorBorderHover: "lg:group-hover:border-[#3B82F6]",
     colorText: "text-[#3B82F6]",
   },
   {
@@ -36,13 +33,14 @@ const steps = [
     desc: "Review số liệu, rút ra insight, cải tiến và tối ưu",
     colorBg: "bg-[#10B981]",
     colorBorder: "border-[#10B981]",
-    colorBorderHover: "lg:group-hover:border-[#10B981]",
     colorText: "text-[#10B981]",
   }
 ];
 
 export default function ProjectsSection() {
-  const [activeStep, setActiveStep] = useState<number | null>(1);
+  const [activeStep, setActiveStep] = useState<number | null>(() => {
+    return typeof window !== "undefined" && window.innerWidth < 1024 ? 1 : null;
+  });
 
   return (
     <section className="container mx-auto px-4 lg:px-6 py-16 lg:py-24 relative overflow-hidden">
@@ -76,21 +74,35 @@ export default function ProjectsSection() {
                  return (
                    <div 
                      key={step.id} 
-                     className="flex items-start gap-6 cursor-pointer group relative"
-                     onClick={() => setActiveStep(isActive ? null : step.id)}
+                     className="flex items-start gap-6 cursor-pointer relative"
+                     onClick={() => {
+                       if (window.innerWidth < 1024) {
+                         setActiveStep(isActive ? null : step.id);
+                       }
+                     }}
+                     onMouseEnter={() => {
+                       if (window.innerWidth >= 1024) {
+                         setActiveStep(step.id);
+                       }
+                     }}
+                     onMouseLeave={() => {
+                       if (window.innerWidth >= 1024) {
+                         setActiveStep(null);
+                       }
+                     }}
                    >
-                     <div className={`w-10 h-10 rounded-full ${step.colorBg} text-white font-bold flex items-center justify-center shrink-0 z-10 transition-opacity mt-0.5 ${isActive ? 'opacity-100' : 'opacity-80 lg:group-hover:opacity-100'}`}>
+                     <div className={`w-10 h-10 rounded-full ${step.colorBg} text-white font-bold flex items-center justify-center shrink-0 z-10 transition-opacity mt-0.5 ${isActive ? 'opacity-100' : 'opacity-80'}`}>
                        {step.id}
                      </div>
-                     <div className={`border-[1.5px] ${isActive ? step.colorBorder : 'border-transparent'} ${step.colorBorderHover} rounded-[24px] px-6 py-2.5 w-full transition-all duration-300 ${isActive ? 'bg-white' : 'lg:group-hover:bg-white'} font-sans text-sm relative`}>
-                       <div className={`font-bold transition-colors ${isActive ? step.colorText : 'text-neutral-500 lg:group-hover:text-brand-dark'} flex justify-between items-center`}>
+                     <div className={`border-[1.5px] ${isActive ? step.colorBorder : 'border-transparent'} rounded-[24px] px-6 py-2.5 w-full transition-all duration-300 ${isActive ? 'bg-white' : ''} font-sans text-sm relative`}>
+                       <div className={`font-bold transition-colors ${isActive ? step.colorText : 'text-neutral-500'} flex justify-between items-center`}>
                          <span>{step.title}</span>
                          {step.id === 1 && (
                            <MapPin className="w-5 h-5 text-brand-orange animate-bounce" />
                          )}
                        </div>
                        {/* Expandable Description */}
-                       <div className={`grid transition-all duration-300 ${isActive ? 'grid-rows-[1fr]' : 'grid-rows-[0fr] lg:group-hover:grid-rows-[1fr]'}`}>
+                       <div className={`grid transition-all duration-300 ${isActive ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}>
                          <div className="overflow-hidden">
                            <p className="pt-2 text-neutral-600 font-normal text-[13px] leading-relaxed">
                              {step.desc}
