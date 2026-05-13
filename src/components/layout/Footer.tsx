@@ -32,19 +32,24 @@ export default function Footer() {
                </p>
             </div>
             
-            <div className="flex items-center gap-4 relative">
+            <div className="flex flex-col items-center gap-4 relative">
               {/* Decorative scribble lines */}
-              <svg className="absolute -left-12 top-0 w-12 h-12 text-white/50 transform -rotate-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round">
+              <svg className="absolute -left-12 -top-4 w-12 h-12 text-white/50 transform -rotate-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round">
                 <path d="M4 12 L16 4 M4 16 L20 8 M4 20 L24 12" />
               </svg>
 
-              <Link to="/signup" className="flex items-center gap-2 bg-brand-lime text-brand-dark px-8 py-4 rounded-full text-xl font-bold hover:bg-[#a8d304] transition hover:scale-105 shadow-[0_0_0_4px_rgba(255,255,255,0.2)]">
+              <Link to="/signup" className="flex items-center justify-center w-full gap-2 bg-brand-lime text-brand-dark px-8 py-4 rounded-full text-xl font-bold hover:bg-[#a8d304] transition hover:scale-105 shadow-[0_0_0_4px_rgba(255,255,255,0.2)]">
                 THAM GIA NGAY 
                 <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
               </Link>
+
+              <a href="https://drive.google.com/file/d/10JxIxAa2AoJT0uKSMuwodM79oZoYkG6B/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-full gap-2 bg-white/10 text-white px-8 py-3 rounded-full text-lg font-bold hover:bg-white/20 transition hover:scale-105 border border-white/20 backdrop-blur-sm">
+                XEM PORTFOLIO
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              </a>
               
               {/* Doodle spring */}
-              <svg className="absolute -bottom-8 -right-8 w-16 h-16 text-yellow-400" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round">
+              <svg className="absolute -bottom-8 -right-8 w-16 h-16 text-yellow-400 pointer-events-none" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round">
                 <path d="M20,20 Q50,0 80,40 Q100,70 50,80 Q10,90 20,20" />
               </svg>
             </div>
