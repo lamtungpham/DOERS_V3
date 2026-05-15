@@ -38,9 +38,9 @@ export default function HeroSection() {
           </p>
 
           <div className="flex items-center gap-4 relative">
-            <Link to="/signup" aria-label="Đăng ký tham gia DOERS" className="bg-brand-orange text-[#0A0B10] px-8 py-3.5 rounded-xl font-bold text-lg hover:bg-orange-600 transition shadow-md relative z-10 whitespace-nowrap">
-              THAM GIA NGAY
-            </Link>
+            <a href="https://drive.google.com/file/d/10JxIxAa2AoJT0uKSMuwodM79oZoYkG6B/view" target="_blank" rel="noopener noreferrer" aria-label="Xem Portfolio DOERS" className="bg-brand-orange text-[#0A0B10] px-8 py-3.5 rounded-xl font-bold text-lg hover:bg-orange-600 transition shadow-md relative z-10 whitespace-nowrap">
+              XEM PORTFOLIO
+            </a>
             {/* Simple loop doodle arrow */}
             <svg width="100" height="40" viewBox="0 0 100 40" fill="none" className="text-brand-orange hidden sm:block transform translate-y-2 shrink-0">
                <path d="M5,25 Q15,10 25,25 T45,25 T65,25 Q75,10 85,25" stroke="currentColor" strokeWidth="2" strokeLinecap="round" fill="none"/>
